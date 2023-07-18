@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "docker:app": "next dev",
-    "docker:api": "",
+    "docker:api": "npm run fake-api",
     "lint": "next lint",
     "husky:prepare": "cd ../ && husky install",
     "fake-api": "json-server --watch faker-api.json --port 8000"
