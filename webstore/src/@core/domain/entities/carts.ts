@@ -12,6 +12,10 @@ export class Cart {
     this.props.products.push(product);
   }
 
+  removeProduct(productID: number) {
+    this.props.products = this.props.products.filter(product => product.id !== productID);
+  }
+
   clear() {
     this.props.products = [];
   }
