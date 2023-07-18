@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "husky:prepare": "husky install"
+    "husky:prepare": "cd ../ && husky install"
   },
   "dependencies": {
     "@types/node": "20.4.2",
