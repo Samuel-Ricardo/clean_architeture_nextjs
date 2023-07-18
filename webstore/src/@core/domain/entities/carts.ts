@@ -8,6 +8,10 @@ export class Cart {
 
   constructor(public props: CartProps) {}
 
+  addProduct(product: Product) {
+    this.props.products.push(product);
+  }
+
   clear() {
     this.props.products = [];
   }
