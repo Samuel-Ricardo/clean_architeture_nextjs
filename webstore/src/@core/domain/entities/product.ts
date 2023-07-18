@@ -25,5 +25,6 @@ export class Product {
     return this.props.price;
   }
 
+  toJSON() { return JSON.stringify({...this.props}) }
 
 }
