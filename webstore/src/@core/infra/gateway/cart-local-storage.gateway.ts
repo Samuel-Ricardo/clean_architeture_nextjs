@@ -22,4 +22,8 @@ export class CartLocalStorageGateway implements CartGateway {
     });
   }
 
+  save(cart: Cart) {
+    localStorage.setItem(this.CART_KEY, JSON.stringify(cart.products));
+  }
+
 }
