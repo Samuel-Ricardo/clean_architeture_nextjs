@@ -5,3 +5,11 @@ export type OrderProps = {
   products: Product[];
   credit_card_number: string;
 }
+
+export class Order {
+
+  constructor(public props: OrderProps) {}
+
+
+
+}
