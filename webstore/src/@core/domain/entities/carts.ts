@@ -1,5 +1,11 @@
 import { Product } from "./product"
 
 export type CartProps = {
-  prducts: Product[];
+  products: Product[];
+}
+
+export class Cart {
+
+  constructor(public props: CartProps) {}
+
 }
