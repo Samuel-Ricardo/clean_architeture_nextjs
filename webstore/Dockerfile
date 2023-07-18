@@ -4,7 +4,7 @@ USER node
 
 WORKDIR /home/node/app
 
-COPY --chown=node:node packacge*.json .
+COPY --chown=node:node package*.json .
 RUN npm install
 
 COPY --chown=node:node . .
