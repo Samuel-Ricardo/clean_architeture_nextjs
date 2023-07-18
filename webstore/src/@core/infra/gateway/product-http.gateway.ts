@@ -19,4 +19,19 @@ export class ProductHttpGateway implements ProductGateway{
     );  
   }
 
+  findById(id: number): Promise<Product> {
+    return this
+      .http
+      .get<Product>(`/products/${id}`)
+      .then(res => new Product(
+          {
+            id: res.data.id, 
+            name: res.data.name, 
+            price: res.data.price, 
+            description: res.data.description
+          }
+        )
+      );
+  }
+
 }
