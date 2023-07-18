@@ -8,6 +8,10 @@ export class Cart {
 
   constructor(public props: CartProps) {}
 
+  clear() {
+    this.props.products = [];
+  }
+
   get total() {
     return this.props.products.reduce((total, product) => total + product.price, 0)
   }
