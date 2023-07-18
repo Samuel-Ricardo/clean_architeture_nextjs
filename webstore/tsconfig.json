@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,7 +22,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@Core": ["./src/@core/index.ts"],
+      "@Core/*": ["./src/@core/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
