@@ -9,7 +9,8 @@
     "docker:app": "next dev",
     "docker:api": "",
     "lint": "next lint",
-    "husky:prepare": "cd ../ && husky install"
+    "husky:prepare": "cd ../ && husky install",
+    "fake-api": "json-server --watch faker-api.json --port 8000"
   },
   "dependencies": {
     "@types/node": "20.4.2",
