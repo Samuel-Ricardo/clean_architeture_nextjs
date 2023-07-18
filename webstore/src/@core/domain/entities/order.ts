@@ -30,5 +30,6 @@ export class Order {
     );
   }
 
+  toJSON() { return JSON.stringify({ ...this }) }
 
 }
