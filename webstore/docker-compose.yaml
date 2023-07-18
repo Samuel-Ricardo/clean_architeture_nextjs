@@ -8,3 +8,11 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
+
+  api:
+    build: .
+    entrypoint: ["npm", "run", "docker:api"]
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/home/node/app
