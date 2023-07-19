@@ -1,18 +1,18 @@
-import Image from 'next/image'
 import { CartProvider } from './context/cart.provider'
 import { Product, ProductProps } from '@/@core/domain/entities/product'
+import { NextPage } from 'next'
 
-export default function Home() {
-  
-  type HomeProps = {
-    products: ProductProps[]
-  }
-
-  return (
-    <CartProvider> 
-      <div>
-        Hello World!
-      </div>
-    </CartProvider>
-  )
+export type HomeProps = {
+  products: ProductProps[]
 }
+
+const Home: NextPage<HomeProps> = ({products}) => (  
+
+  <CartProvider> 
+    <div>
+      Hello World!
+    </div>
+  </CartProvider>
+)
+
+export default Home;
