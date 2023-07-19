@@ -9,4 +9,5 @@ RUN npm install
 
 COPY --chown=node:node . .
 
+#CMD [ "npm", "run", "start:docker"]
 #CMD [ "tail", "-f", "/dev/null" ]
