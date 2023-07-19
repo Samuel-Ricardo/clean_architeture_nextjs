@@ -1,3 +1,4 @@
+import { createContext } from "react"
 import { Product } from "@Core/domain/entities/product"
 import { Cart } from "@Core/domain/entities/carts"
 
@@ -9,4 +10,12 @@ export type CartContextType = {
   reload: () => void;
 }
 
+const defaultContext: CartContextType = {
+  cart: new Cart({products: []}),
+  addProduct: (product: Product) => {},
+  removeProduct: (productID: number) => {},
+  clear: () => {},
+  reload: () => {},
+}
 
+export const CartContext = createContext<CartContextType>(defaultContext);
