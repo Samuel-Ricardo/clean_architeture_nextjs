@@ -4,10 +4,11 @@ import { CartContext } from "../context/cart.provider";
 import { useRouter } from "next/router";
 import { Registry, container } from "@/@core/infra/container-registry";
 import { ProcessOrderUseCase } from "@/@core/application/order/process-order.use-case";
+import { Product } from "@/@core/domain/entities/product";
 
 type Props = {};
 
-export const CheckoutPage: NextPage = (props: Props) => {
+const CheckoutPage: NextPage = (props: Props) => {
   
   const cartContext = useContext(CartContext);
   const router = useRouter();
@@ -27,4 +28,40 @@ export const CheckoutPage: NextPage = (props: Props) => {
 
     router.push(`/checkout/${order.id}/success`);
   }
+
+  return (
+    <div>
+
+      <h3>Meu Carrinho</h3>
+
+      <ul>
+        {cartContext.cart.products.map(product => (
+          <li key={product.id}>
+            Produto {product.name} - {product.price}
+          </li>
+        ))}
+      </ul>
+
+      <form onSubmit={onSubmit}> 
+
+        <div>
+          
+          <label htmlFor="" > Cartão de Crédito </label>        
+          <input
+            type="text"
+            name="creadit_card_number"
+            id="creadit_card_number"
+          />  
+
+        </div>
+        
+        <div>
+          <button type="submit">Comprar</button>
+        </div>
+
+      </form>
+    </div>
+  )
 }
+
+export default CheckoutPage;
