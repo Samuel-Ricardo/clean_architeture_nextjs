@@ -1,7 +1,9 @@
 import { Product, ProductProps } from "@Core/domain/entities/product"
-import { NextPage } from "next";
+import { GetStaticPathsResult, GetStaticPropsContext, GetStaticPropsResult, NextPage } from "next";
 import { useContext } from "react";
 import { CartContext } from "../context/cart.provider";
+import { Registry, container } from "@/@core/infra/container-registry";
+import { GetProductUseCase } from "@/@core/application/product/get-product.use-case";
 
 export type PropductDetailProps = {
   product: ProductProps;
@@ -29,11 +31,18 @@ export const PropductDetail:NextPage<PropductDetailProps> = ({ product }: Propdu
 
 export default PropductDetail;
 
-export function getStaticPaths() {
+export function getStaticPaths(): GetStaticPathsResult {
   return {
     paths: [],
     fallback: 'blocking'
   }
 }
 
+export async function getStaticProps(context: GetStaticPropsContext): Promise<GetStaticPropsResult<PropductDetailProps>> {
+  const {id} = context.params || {}
 
+  const getProuct = container.get<GetProductUseCase>(Registry.GetProductUseCase);
+  const product = await getProuct.execute(+id!);
+
+  return { props: { product } }
+}
