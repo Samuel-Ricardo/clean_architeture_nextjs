@@ -29,5 +29,11 @@ export const PropductDetail:NextPage<PropductDetailProps> = ({ product }: Propdu
 
 export default PropductDetail;
 
+export function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  }
+}
 
 
