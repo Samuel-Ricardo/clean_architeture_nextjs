@@ -1,4 +1,3 @@
 {
-  "*.ts": ["npm run lint:staged"],
-  "*.tsx": ["npm run lint:next"]
+  "*.ts|tsx": ["npm run lint:staged"],
 }
