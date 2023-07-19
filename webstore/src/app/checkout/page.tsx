@@ -4,7 +4,6 @@ import { CartContext } from "../context/cart.provider";
 import { useRouter } from "next/router";
 import { Registry, container } from "@/@core/infra/container-registry";
 import { ProcessOrderUseCase } from "@/@core/application/order/process-order.use-case";
-import { Product } from "@/@core/domain/entities/product";
 
 type Props = {};
 
