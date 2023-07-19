@@ -33,5 +33,4 @@ return (
     </div>
   </CartProvider>
 )}
-
 export default Home;

@@ -10,7 +10,7 @@ export class ProcessOrderUseCase {
     private cartGateway: CartGateway
   ) {}
 
-  async excute ({
+  async execute ({
     products,
     credit_card_number
   }:{
