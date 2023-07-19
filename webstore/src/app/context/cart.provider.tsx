@@ -1,3 +1,5 @@
+'use client';
+
 import { PropsWithChildren, createContext, useCallback, useEffect, useState } from "react"
 import { Product } from "@Core/domain/entities/product"
 import { Cart } from "@Core/domain/entities/carts"
