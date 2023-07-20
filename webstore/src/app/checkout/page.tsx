@@ -1,7 +1,9 @@
+'use client';
+
 import { NextPage } from "next";
 import { FormEvent, useContext } from "react";
 import { CartContext } from "../context/cart.provider";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Registry, container } from "@/@core/infra/container-registry";
 import { ProcessOrderUseCase } from "@/@core/application/order/process-order.use-case";
 

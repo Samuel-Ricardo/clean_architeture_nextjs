@@ -1,7 +1,6 @@
 'use client';
 
 import { Product, ProductProps } from "@Core/domain/entities/product"
-import { GetStaticPathsResult } from "next";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/cart.provider";
 import { Registry, container } from "@Core/infra/container-registry";

@@ -7,7 +7,7 @@ export class AddProductInCartUseCase {
 
   execute(product: Product) {
     const cart = this.gateway.get();
-    cart.addProduct(product);
+    cart.addProduct(product);  
 
     this.gateway.save(cart);
     return cart;
