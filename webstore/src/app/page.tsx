@@ -1,9 +1,9 @@
 import { ListProductsUseCase } from '@/@core/application/product/list-products.use-case'
-import { CartProvider } from './context/cart.provider'
-import { Product, ProductProps } from '@/@core/domain/entities/product'
+import { ProductProps } from '@/@core/domain/entities/product'
 import { Registry, container } from '@/@core/infra/container-registry'
-import { GetServerSideProps, NextPage } from 'next'
+import { NextPage } from 'next'
 import Link from "next/link";
+import { MyCart } from './components/my-cart'
 
 export type HomeProps = {
   products: ProductProps[]
@@ -17,7 +17,7 @@ const Home: NextPage = async () => {
   
 
 return (
-  <CartProvider> 
+  <div> 
     <div>
       <h1>E-Commerce :D</h1>
         <ul>
@@ -31,6 +31,7 @@ return (
           ))}
         </ul>
     </div>
-  </CartProvider>
+    <MyCart/>
+  </div>
 )}
 export default Home;
